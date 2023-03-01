@@ -1,0 +1,242 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: black;
+}
+
+.gadget{
+    background-color: rgb(0, 0, 0);
+    padding: 20px;
+    border: 5px solid #028082;  
+    border-radius: 10px;
+    width: 400px;
+    height: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    
+}
+
+.container{
+    width: 500px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.output{
+    margin-top: 20px;
+}
+
+.output input{
+    width: 100%;
+    height: 60px;
+    outline-style: none;
+    padding: 10px 20px;
+    font-size: 2rem;
+    border-radius: 4px;
+}
+
+.buttons{
+    display: flex;
+    margin: 10px auto ;
+    width: 100%;
+    max-width: 500px;
+    font-family: sans-serif;
+    flex-wrap: wrap;
+}
+
+.buttons input{
+    background: #028082;     
+    margin: 8px 4px;
+    width: 30%;
+    height: 50px;
+    font-size: 1em;
+    color: #fff;
+    /* as proriedades a partir daqui alinham o texto no centro */
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.buttons input:hover{
+    background-color: #028082b2;
+}
+
+.buttons #btn_c{
+    background-color: #f10000b2;
+    width: 100%;
+}
+
+
+.historic{
+    background-color: white;
+    width: 300px;
+    height: 100vh;
+    padding: 20px 10px;
+    overflow-y: scroll;
+}
+
+.historic h2{
+    text-align: center;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+}
+
+.historic hr{
+    width: 20px;
+    margin: 0 auto;
+}
+
+.historic ul{
+    padding: 20px 0px;
+    margin-top: 20px;
+    border-top: 2px solid black
+    ;
+}
+
+.historic ul li{
+    padding: 5px 10px;
+    font-size: 20px;
+    border-bottom: 1px solid rgb(2, 92, 92);
+}
+
+
+.efect{
+    background-color: rgba(220, 220, 220, 0.367);
+    box-shadow: 0px 0px 100px 200px rgba(220, 220, 220, 0.381);
+    opacity: 0.2;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.guard{
+    background-color: white;
+    border: 3px solid rgb(46, 46, 46);
+    margin-left: 320px;
+    margin-top: 20px;
+    cursor: pointer;
+    width: 55px;
+    height: 55px;
+    font-weight: bold;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+#historic_check, #modal_config_checkbox{
+    opacity: 0;
+    position: absolute;
+    left: -59px;
+}
+
+#historic_check:checked ~ .guard{
+    animation: btn .6s linear forwards;
+}
+
+@keyframes btn {
+    100%{
+        margin-left: 20px;
+        transform: rotateZ(0deg);
+    }
+}
+
+label{
+    transform: rotateZ(180deg);
+}
+
+
+#historic_check:checked ~ .historic{
+    animation: hist .6s linear forwards;
+}
+
+@keyframes hist {
+    100%{
+        margin-left: -300px;
+    }
+}
+
+.config{
+    color: gray;
+    position: absolute;
+    left: 90%;
+    bottom: 90%;
+    z-index: 4;
+    cursor: pointer;
+}
+
+input[type=color]{
+    opacity: 0;
+}
+
+.modal_config{
+    background-color: white;
+    border-radius: 10px;
+    width: auto;
+    height: auto;
+    padding: 20px 15px;
+    position: absolute;
+    left: 77%;
+    bottom: 63%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#modal_config_checkbox:checked ~ .modal_config{
+    display: none;
+}
+
+.config:hover{
+    animation: btn_config 1.4s infinite alternate;
+}
+
+@keyframes btn_config {
+    100%{
+        transform: rotateZ(160deg);
+    }
+}
+
+.modal_config ul li{
+    height: 35px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.253);
+    list-style: none;
+}
+
+
+.modal_config ul label{
+    margin: 10px 0;
+    cursor: pointer;
+    font-family: sans-serif;
+}
+
+#label_close{
+    background-color: rgb(230, 0, 0);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 15px;
+    margin: 0 auto;
+    transform: rotateZ(0deg);
+}
+
