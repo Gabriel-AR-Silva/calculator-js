@@ -4,8 +4,11 @@ $(function(){
   var numberTwo;
   var operator;
   var output = $('#output');
-  //When the user clicks on the numeric button, the number clicked on the "output" must be added
+  var historicBox = $(".historicBox");
+  var resultArray = [];
 
+
+  //When the user clicks on the numeric button, the number clicked on the "output" must be added
   //Create an event for clicking the numeric button
   $('.btn').on('click', function(){
       // The "this" refers to the number clicked
@@ -16,7 +19,7 @@ $(function(){
       let screenNumber = output.val();
 
       //Adds in output the previous value and the number clicked
-      $("#output").val(screenNumber + number);
+      output.val(screenNumber + number);
   });
 
   // When you click an operator, you save the number that was typed.
@@ -85,19 +88,37 @@ $(function(){
       if(operator == '+'){
           let result = parseFloat(numberOne) + parseFloat(numberTwo);
           output.val(result);
+          
+          let historic = parseFloat(numberOne)  + '+' +  parseFloat(numberTwo) + " = " + result;
+          resultArray.push(historic);
+         
       }
       if(operator == '-'){
           let result = parseFloat(numberOne) - parseFloat(numberTwo);
           output.val(result);
+          
+          let historic = parseFloat(numberOne)  + '-' +  parseFloat(numberTwo) + " = " + result;
+          resultArray.push(historic);
       }
       if(operator == '/'){
           let result = parseFloat(numberOne) / parseFloat(numberTwo);
           output.val(result);
+          
+          let historic = parseFloat(numberOne)  + '/' +  parseFloat(numberTwo) + " = " + result;
+          resultArray.push(historic);
       }
       if(operator == '*'){
           let result = parseFloat(numberOne) * parseFloat(numberTwo);
           output.val(result);
+          
+          let historic = parseFloat(numberOne)  + '*' +  parseFloat(numberTwo) + " = " + result;
+          resultArray.push(historic);
       }
+
+      historicBox.html("");
+      for(var i = 0; i<resultArray.length; i++) {
+            historicBox.append('<li>'+(i+1)+')  '+resultArray[i]+'</li>');
+        }
   })
 
   $('.btn_cancel').on('click', function(){
