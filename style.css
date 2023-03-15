@@ -14,7 +14,7 @@ body{
     border: 5px solid #028082;  
     border-radius: 10px;
     width: 400px;
-    height: 500px;
+    height: 570px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -76,6 +76,11 @@ body{
 
 .buttons #btn_c{
     background-color: #f10000b2;
+    width: 100%;
+}
+
+ #btn_ce{
+    background-color: #f17800b2;
     width: 100%;
 }
 
