@@ -1,112 +1,118 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
-        <title>Calculadora</title>
-
-    </head>
-    <body>
-        
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="jquery/jquery-3.6.3.min.js"></script>
+    <title>Calculator</title>
+  </head>
+  <body>
     <label class="config" for="modal_config_checkbox">
-        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-gear-fill" viewBox="0 0 16 16">
-            <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"/>
-          </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="40"
+        height="40"
+        fill="currentColor"
+        class="bi bi-gear-fill"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"
+        />
+      </svg>
     </label>
 
-    <input type="checkbox" name="modal_config_checkbox" id="modal_config_checkbox" checked>
+    <input
+      type="checkbox"
+      name="modal_config_checkbox"
+      id="modal_config_checkbox"
+      checked
+    />
     <div class="modal_config">
-        <ul>
-            <li>
-                <label for="color_calculadora">Cor da calculadora</label>
-                <input type="color" name="color_calculadora" id="color_calculadora" onchange="mudarCorCalculadora()">
-            </li>
-            <li>
-                <label for="color_borda_calc">Cor da borda</label>
-                <input type="color" name="color_borda_calc" id="color_borda_calc" onchange="mudarCorBordaCalc()">
-            </li>
-            <!-- <li>
-                <label for="color_button_calc">Cor dos Buttons</label>
-                <input type="color" name="color_button_calc" id="color_button_calc" onchange="mudarCorButtonCalc()">
+      <ul>
+        <li>
+          <label for="color_nmruladora">Cor da nmruladora</label>
+          <input
+            type="color"
+            name="color_nmruladora"
+            id="color_nmruladora"
+            onchange="mudarCornmruladora()"
+          />
+        </li>
+        <li>
+          <label for="color_borda_nmr">Cor da borda</label>
+          <input
+            type="color"
+            name="color_borda_nmr"
+            id="color_borda_nmr"
+            onchange="mudarCorBordanmr()"
+          />
+        </li>
+        <!-- <li>
+                <label for="color_button_nmr">Cor dos Buttons</label>
+                <input type="color" name="color_button_nmr" id="color_button_nmr" onchange="mudarCorButtonnmr()">
             </li> -->
-        </ul>
+      </ul>
 
-        <label for="modal_config_checkbox" id="label_close">CLOSE</label>
+      <label for="modal_config_checkbox" id="label_close">CLOSE</label>
     </div>
 
-    <input type="checkbox" name="check" id="historic_check" checked>
+    <input type="checkbox" name="check" id="historic_check" checked />
     <label class="guard" for="historic_check">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-        <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        fill="currentColor"
+        class="bi bi-arrow-right"
+        viewBox="0 0 16 16"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+        />
       </svg>
     </label>
     <div class="historic">
-        <h2>Historic</h2>
-        <hr>
-        <ul>
-            <li>2*3=6</li>
-        </ul>
+      <h2>Historic</h2>
+      <hr />
+      <ul>
+        <li>2*3=6</li>
+      </ul>
     </div>
-    
+
     <div class="gadget">
-        <div class="container">
-            <div class="output">
-                <input type="text" id="output">
-            </div>
-            <div class="buttons">
-                <input type="button" value="1" id="btn_1" class="btn_calc">
-                <input type="button" value="2" id="btn_2" class="btn_calc">
-                <input type="button" value="3" id="btn_3" class="btn_calc">
-                <input type="button" value="4" id="btn_4" class="btn_calc">
-                <input type="button" value="5" id="btn_5" class="btn_calc">
-                <input type="button" value="6" id="btn_6" class="btn_calc">
-                <input type="button" value="7" id="btn_7" class="btn_calc">
-                <input type="button" value="8" id="btn_8" class="btn_calc">
-                <input type="button" value="9" id="btn_9" class="btn_calc">
-                <input type="button" value="0" id="btn_0" class="btn_calc">
-                <input type="button" value="+" id="btn_+" class="btn_calc">
-                <input type="button" value="-" id="btn_-" class="btn_calc">
-                <input type="button" value="/" id="btn_/" class="btn_calc">
-                <input type="button" value="*" id="btn_*" class="btn_calc">
-                <input type="button" value="=" id="btn_=" class="btn_calc">
-                <input type="button" value="c" id="btn_c" class="btn_calc">
-            </div>
+      <div class="container">
+        <div class="output">
+          <input type="text" id="output" style="color: black" />
         </div>
+        <div class="buttons">
+          <input type="button" value="1" id="btn_1" class="btn btn_nmr" />
+          <input type="button" value="2" id="btn_2" class="btn btn_nmr" />
+          <input type="button" value="3" id="btn_3" class="btn btn_nmr" />
+          <input type="button" value="4" id="btn_4" class="btn btn_nmr" />
+          <input type="button" value="5" id="btn_5" class="btn btn_nmr" />
+          <input type="button" value="6" id="btn_6" class="btn btn_nmr" />
+          <input type="button" value="7" id="btn_7" class="btn btn_nmr" />
+          <input type="button" value="8" id="btn_8" class="btn btn_nmr" />
+          <input type="button" value="9" id="btn_9" class="btn btn_nmr" />
+          <input type="button" value="0" id="btn_0" class="btn btn_nmr" />
+          <input type="button" value="+" id="btn_+" class="btn_op btn_add" />
+          <input type="button" value="-" id="btn_-" class="btn_op btn_sub" />
+          <input type="button" value="/" id="btn_/" class="btn_op btn_div" />
+          <input type="button" value="*" id="btn_*" class="btn_op btn_mult" />
+          <input type="button" value="=" id="btn_=" class="btn_igual" />
+          <input type="button" value="c" id="btn_c" class="btn btn_cancel" />
+          <input type="button" value="ce" id="btn_ce" class="btn btn_cancel_geral" />
+        </div>
+      </div>
     </div>
 
     <div class="efect"></div>
 
-
-    <script>
-        let gadget = document.querySelector(".gadget");
-
-        let color_calculadora = document.querySelector("#color_calculadora");
-        function mudarCorCalculadora(){
-            gadget.style.backgroundColor = color_calculadora.value;  
-        }
-        mudarCorCalculadora() 
-
-
-        let color_borda_calc = document.querySelector("#color_borda_calc");
-        function mudarCorBordaCalc(){
-            gadget.style.borderColor = color_borda_calc.value;
-            
-        }
-        mudarCorBordaCalc()
-
-        // let color_button_calc = document.querySelector("#color_button_calc");
-        // let btn_calc = document.querySelectorAll(".btn_calc");
-        // console.log(color_button_calc.value)
-        // mudarCorButtonCalc()
-
-        // btn_calc.forEach("onchange", (e) =>{
-        //     let ele = ele
-        //         function mudarCorButtonCalc(ele){
-        //         e.style.backgroundColor = color_button_calc.value;
-        //     }
-        // })
-    </script>
-</body>
+    <script src="change_color.js"></script>
+    <script src="calculator.js" type="text/javascript"></script>
+  </body>
 </html>
